@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+      <link rel="stylesheet" href="main.css" />
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> -->
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    <script src="addDistrict.js"></script>
+
+    <script>
+        function showLogin(){
+            var x = document.getElementById('login_div');
+            x.style.display = 'block';
+            var x = document.getElementById('signup_div');
+            x.style.display = 'none';
+        }
+        function showSignUp(){
+            var x = document.getElementById('login_div');
+            x.style.display = 'none';
+            var x = document.getElementById('signup_div');
+            x.style.display = 'block';
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+    <div class="logInPage">
+       <div id="login_div" class="login" style="display: block">
+               <input id="txtEmail_login" type="email" placeholder="Enter your Email">
+               <i class="fa fa-envelope" aria-hidden="true" ></i>
+               <input id="txtPassword_login" type="password" placeholder=" Enter Your Password">
+               <i class="fa fa-unlock" aria-hidden="true"></i>
+               <input type="submit" id="btnLogin" class="btn btn-action" name="" value="Log In" />
+               <h6>Don't have any account?</h6>
+               <input type="submit" class="btn-primary" onclick="showSignUp()" name="" value="Sign Up"/>
+
+      </div>
+    </div>
+                  <!-- End of Log in portion -->
+
+            <!-- This is for Sign Up portion  -->
+  <div class="SignUpPage">
+    <!-- <div id="signup_div" class="login" style="display: none"> -->
+    <div id="signup_div" class="signUp" style="display: none">
+
+        <input id="txtEmail_signup" type="email" placeholder="Email">
+        <!-- <i class="fa fa-envelope" aria-hidden="true" ></i> -->
+        <input id="txtPassword_signup" type="password" placeholder="Password">
+        <!-- <i class="fa fa-unlock" aria-hidden="true"></i> -->
+        <input id="txtAge" type="number" placeholder="Age">
+
+        Gender:  <select id="txtGender" class="btn btn-secondary">
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select><br>
+
+        District:  <select id="txtEthnicity" class="btn btn-secondary">
+        </select></br>
+
+        <script>addDistrict();</script>
+        <!-- <button id="btnSignUp" class="btn btn-secondary">Sign Up</button> -->
+        <div>
+        </br>
+          <input type="submit" id="btnSignUp" class="btn btn-secondary"name="" value="Sign Up"/>
+          <h6>Already have an account?</h6>
+          <input type="submit" id="btnSignUp" class="btn-primary" onclick="showLogin()" name="" value="Log in"/>
+            <!-- <button class="btn-primary" onclick="showLogin()">login</button> -->
+            <!-- <button class="btn-primary" onclick="showSignUp()">signup</button> -->
+        </div>
+
+   </div>
+</div>
+                      <!-- End of sign Up portion -->
+
+    <script src="app.js"></script>
+</body>
+</html>
